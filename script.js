@@ -8,11 +8,7 @@ let aulas = document.querySelectorAll('[id^="disciplina-aulas"] a');
 aulas.forEach(assistir => {
     if (!assistir.querySelector('i') || assistir.querySelector('.fa-star-half-o')) {
         let abrirAula = window.open(assistir.href)
-        let tagScript = document.createElement('script');
-        tagScript.setAttribute('src', '');
-        tagScript.setAttribute('defer', '');
-        tagScript.innerText = ``;
-        abrirAula.document.body.appendChild(tagScript);
+        abrirAula.location.href = "javascript:(let multiplasAulas = document.querySelectorAll('.flex-container a'); multiplasAulas.forEach(aula => { window.open(aula.href) });)"
     }
 });
 
